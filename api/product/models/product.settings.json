@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Product",
+  "info": {
+    "name": "Product"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "minLength": 1
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "category": {
+      "model": "category",
+      "via": "products"
+    }
+  }
+}
